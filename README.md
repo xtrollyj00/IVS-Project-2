@@ -14,5 +14,5 @@ Nazev tymu
 Licence
 -------
 
-Tento program je poskytovan...
+Tento program je poskytovan pod [The GNU General Public License v3.0](COPYING)
 
