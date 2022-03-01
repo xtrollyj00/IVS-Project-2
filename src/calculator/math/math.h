@@ -4,11 +4,11 @@
 
 class Math {
     public:
-    double add(double a, double b);
-    double subtract(double a, double b);
-    double multiply(double a, double b);
-    double divide(double a, double b);
-    unsigned long long int factorial(unsigned long int a);
-    long double power(double a, double n);
-    long double root(double a, double n);
+    double Add(double a, double b);
+    double Subtract(double a, double b);
+    double Multiply(double a, double b);
+    double Divide(double a, double b);
+    unsigned long long int Factorial(unsigned long int a);
+    long double Power(double a, double n);
+    long double Root(double a, double n);
 };
