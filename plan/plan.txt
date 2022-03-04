@@ -1,0 +1,54 @@
+1. Deadlines
+    02.03.2022 - Repository initialization, license     - Oliver
+    03.03.2022 - Project plan                           - Oliver
+    04.03.2022 - Math library interface                 - Oliver
+    11.03.2022 - Math library tests and debugging       - Jakub
+    11.03.2022 - GUI interface                          - Ondrej
+    14.03.2022 - Math library                           - Oliver
+    21.03.2022 - Doxygen setup                          - Oliver
+    21.03.2022 - Math library linked with GUI           - Jakub
+    25.03.2022 - GUI                                    - Ondrej
+    28.03.2022 - Makefile                               - Oliver
+    28.03.2022 - User documentation                     - Jakub
+    01.04.2022 - Profiling                              - Ondrej
+    05.04.2022 - Installer                              - Oliver
+    05.04.2022 - Profile guided optimisation            - Jakub
+    08.04.2022 - GUI Mockup                             - Ondrej
+    15.04.2022 - Differences between plan and reality and rating, pack
+                 and install on target platform         - all
+
+
+2. Tasks
+    Alexaj Ondrej
+        - GUI
+        - Profiling
+        - GUI Mockup
+
+    Gurka Oliver
+        - Math library
+        - Installer
+        - Makefile
+        - Doxygen setup
+        - Plan
+
+    Magda Jakub
+        - User documentation
+        - Linking math library with GUI
+        - Math library testing
+        - (optional) Profile guided optimisation
+
+    Distributed tasks
+        - Makefile
+        - Program documentation
+
+
+3. Communication
+Our team will communicate on platform Slack.
+While communication through Slack, team member must answer within 24 hours from sending the message.
+
+For not important topics we chose Messenger as fast way to communicate.
+
+
+4. Version control system
+Our team chose Git for version control system with hosting on https://www.gitlab.com.
+Link to our repository: https://gitlab.com/fit-vut-izp-team/ivs-calculator
