@@ -42,7 +42,7 @@ unsigned long long int Math::Factorial(double a) {
 
     if (a == 0) return 1;
 
-    for (unsigned long int i = a - 1; a > 0; i--) {
+    for (unsigned long int i = a - 1; i > 0; i--) {
         out *= i;
     }
 
