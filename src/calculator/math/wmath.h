@@ -6,11 +6,64 @@
 */
 
 /**
+ * @file wmath.h
+ * @brief Math library interface
+ *
+ * @author Oliver Gurka <xgurka00@stud.fit.vutbr.cz>
+ */
+
+/**
+ * @brief Class containing result of last operation
+ *        done by this library.
+ */
+class Answer {
+    private:
+    /**
+     * @brief Result of last sucessful operation.
+     *
+     */
+    double value;
+
+    public:
+
+    /**
+     * @brief Construct a new Answer object with initial value.
+     *
+     * @param value - initial value to store.
+     */
+    Answer(double value);
+
+    /**
+     * @brief Returns value, which this object stores.
+     *
+     * @return double value stored inside this object.
+     */
+    double GetValue();
+
+    /**
+     * @brief Sets value stored by this object to @b value.
+     *
+     * @param value - value to store.
+     */
+    void SetValue(double value);
+};
+
+
+/**
  * @brief This is math library class
  *        providing basic functions for WCalculator.
  */
 class Math {
+
+    private:
+    /**
+     * @brief Contains the result of last operation done by this object.
+     */
+    Answer* ans = nullptr;
+
     public:
+
+    ~Math();
 
     /**
      * @brief Returns result of operation ( @b a + @b b ).
@@ -58,9 +111,9 @@ class Math {
      * @exception Exc::InvalidArgumentException - Thrown when @b a is not a natural number.
      *
      * @param a operator of factorial
-     * @return unsigned long long int factorail of @b a
+     * @return double factorail of @b a
      */
-    unsigned long long int Factorial(double a);
+    double Factorial(double a);
 
     /**
      * @brief Returns result of operation a^n.
@@ -74,16 +127,39 @@ class Math {
     double Power(double a, double n);
 
     /**
-     * @brief Returns result of operation n-th-root(a)
+     * @brief Returns result of operation n-th-root(a).
      *
-     * @exception Exc::InvalidArgumentException() - Thrown when n == 0 and a < 0
-     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity)
+     * @exception Exc::InvalidArgumentException() - Thrown when n == 0 or a < 0.
+     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity).
      *
      * @param a radicand
      * @param n degree
      * @return double n-th-root of a
      */
     double Root(double a, double n);
+
+    /**
+     * @brief Returns result of operation log(a) (decadic logarithm).
+     * 
+     * @exception Exc::InvalidArgumentException() - Thrown when @b a <= 0.
+     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity).
+     * 
+     * @param a antilogarithm
+     * @return double logarithm
+     */
+    double Log(double a);
+
+    /**
+     * @brief Returns pointer result of last sucessful operation.
+     *
+     * @details If operation #1 was sucessful and returns @b Answer contaning value=3.14 and
+     *          operation #2 was unsucessful (exception was thrown), value in
+     *          this object will be result of operation #1, value=3.14.
+     *
+     * @return Answer object containg the result. If there is no last valid result
+     *         of operation, returns @b nullptr.
+     */
+    Answer* GetAnswer();
 
     private:
 
@@ -106,4 +182,14 @@ class Math {
      * @return false - otherwise
      */
     bool IsValid(double a);
+
+    /**
+     * @brief Sets value stored in @b ans. If @b ans is @b nullptr,
+     *        new instance is created.
+     *
+     * @param value - value to store.
+     */
+    void SetAnswer(double value);
 };
+
+/*** End of file wmath.h ***/
