@@ -39,18 +39,33 @@ Math::~Math() {
 
 double Math::Add(double a, double b) {
     double result = a + b;
+
+    if (!IsValid(result)) {
+        throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
+    }
+
     this->SetAnswer(result);
     return result;
 }
 
 double Math::Subtract(double a, double b) {
     double result = a - b;
+
+    if (!IsValid(result)) {
+        throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
+    }
+
     this->SetAnswer(result);
     return result;
 }
 
 double Math::Multiply(double a, double b) {
     double result = a * b;
+
+    if (!IsValid(result)) {
+        throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
+    }
+
     this->SetAnswer(result);
     return result;
 }
@@ -62,25 +77,34 @@ double Math::Divide(double a, double b) {
     }
 
     double result = a / b;
+
+    if (!IsValid(result)) {
+        throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
+    }
+
     this->SetAnswer(result);
     return result;
 }
 
 double Math::Factorial(double a) {
 
-    unsigned long long int result = a;
+    double result = a;
 
     if (!IsNatural(a)) {
         throw Exc::InvalidArgumentException("Argument must be natural number!");
     }
 
-    if (a == 0) {
-        this->SetAnswer(1);
-        return 1;
+    if (a == 0.0) {
+        this->SetAnswer(1.0);
+        return 1.0;
     }
 
-    for (unsigned long int i = a - 1; a > 0; i--) {
+    for (double i = a - 1; i > 0; i--) {
         result *= i;
+    }
+
+    if (!IsValid(result)) {
+        throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
     }
 
     this->SetAnswer(result);
@@ -104,7 +128,7 @@ double Math::Power(double a, double n) {
 double Math::Root(double a, double n) {
 
     if (a < 0 || n == 0) {
-        throw new Exc::InvalidArgumentException("Radicant must be greater or equal than 0 and degree must not be 0!");
+        throw Exc::InvalidArgumentException("Radicant must be greater or equal than 0 and degree must not be 0!");
     }
 
     double result = std::pow(a, 1.0 / n);

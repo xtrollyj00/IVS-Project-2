@@ -7,9 +7,9 @@
 
 /**
  * @file mainwindow.h
- * @brief GUI interface
- *
  * @author Ondrej Alexaj <xalexa09@stud.fit.vutbr.cz>
+ * @brief GUI interface
+ * @date  2022-03-15
  */
 
 
@@ -18,7 +18,9 @@
 
 #include <QMainWindow>
 
-#define MAX_WIDTH 31
+#define WIDTH 360
+#define HEIGHT 510
+#define MAX_WIDTH 25
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -30,7 +32,7 @@ class MainWindow : public QMainWindow
 
 public:
     /**
-     * @brief Ceates main window
+     * @brief Creates main window
      */
     MainWindow(QWidget *parent = nullptr);
 
@@ -40,9 +42,19 @@ public:
     ~MainWindow();
 
 private:
+    /**
+     * @brief Resets variables that are shared by more function to initial value'
+     */
     void variablesSet();
 
+    /**
+     * @brief Clears the display and sets "0" as the initial value displayed.
+     *  Also restores all the variables to initial value.
+     */
+    void clearDisplay();
+
     Ui::MainWindow *ui;
+    bool wasResult = false; /**< Indicates if "equals" was pressed */
     bool stillZeroFirst = true; /**< Indicates if 0 is still the beginning of the operand */
     bool secondOperand = false; /**< Indicates if secondOperand is currently being typed */
     bool startOfOperand = true; /**< Indicates if the operand is goind to gain it's first digit */
@@ -56,15 +68,16 @@ private:
 
 private slots:
     /**
-    * @brief Concatenates digits
-    * @detail Does not support 000000xxx or 0789 type of input
-    * but 0.xxx is supported
+    * @brief Concatenates digits.
+    * Supports Yxxx... format of input, where Y != 0.
+    * Does not support 000000xxx or 0789 type of input
+    * but 0.xxx is supported.
     */
-    void on_pushButton_digit_released();
+    void digit_released();
 
     /**
     * @brief Appends "." to what is displayed
-    * @detail More dots within one digit string
+    * More dots within one digit string
     * are not supported (for example 0.12.00 not supp.).
     * Keeps track of dots (in 1st and 2nd operand).
     * Does not allow expr. like 8.+9.
@@ -75,20 +88,19 @@ private slots:
 
     /**
     * @brief Sends operands to evaluation in form of string
-    * @detail Formats in which are operations sent:
+    * Formats in which are operations sent:
     * "154.2+32" ... similarly in case of -,*,/
     * "x√y" means xth root of number y
     * "x!" the format for sending factorials.
     * "x^y" means x to the power of y
     * "logX" means decimal logarigthm of number X
     * "Ans+xxx" or "Ans+Ans" or "xxx+Ans"
-    * @todo implementation waiting for interface from file between GUI and math lib.
     */
     void on_pushButton_equals_released();
 
     /**
     * @brief Loads and displays last shown result under "Ans"
-    * @detail Just format of Ans+X, Ans+Ans, X+Ans, logAns or Ans! is supported,
+    * Just format of Ans+X, Ans+Ans, X+Ans, logAns or Ans! is supported,
     * where "+" represents any operator.
     */
     void on_pushButton_ans_released();
@@ -109,7 +121,8 @@ private slots:
     void on_pushButton_div_released();
 
     /**
-    * @brief If possible,adds - to string to know subtracting is desired
+    * @brief If possible,adds - to string to know subtracting is desired.
+    * Or making expresion like X--Y (is supported).
     */
     void on_pushButton_minus_released();
 
@@ -124,20 +137,20 @@ private slots:
     void on_pushButton_power_released();
 
     /**
-    * @brief If possible, adds keyword "ROOT" to specify operation
+    * @brief If possible, adds √ to specify operation
     *
     */
     void on_pushButton_root_released();
 
     /**
     * @brief If possible, adds keyword "log" to specify operation
-    * @detail Works only when nothing else was typed.
+    * Works only when nothing else was typed.
     */
     void on_pushButton_log_released();
 
     /**
     * @brief Deletes symbols from the right
-    * @detail When deleting last symbol, 0
+    * When deleting last symbol, 0
     * is placed (just like on the start).
     * The "log" is deleted all at once (all 3 chars)
     * and 0 is placed instead.

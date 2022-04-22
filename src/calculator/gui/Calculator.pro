@@ -18,16 +18,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     gui_main.cpp \
     mainwindow.cpp \
-    ../math/wmath.cpp
+    ../math/wmath.cpp \
+    ../gui-linking/gui-linker.cpp
 
 HEADERS += \
     mainwindow.h \
-    ../math/wmath.h
+    ../math/wmath.h \
+    ../gui-linking/gui-linker.h
 
 FORMS += \
     mainwindow.ui
 
-# Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
+TARGET = WCalculator
+
+#install
+target.path = $$PREFIX/bin
+INSTALLS += target
