@@ -142,7 +142,7 @@ double Math::Root(double a, double n) {
 
 double Math::Log(double a) {
     if (a <= 0) {
-        throw new Exc::InvalidArgumentException("Antilogarithm must be greater then 0!");
+        throw Exc::InvalidArgumentException("Antilogarithm must be greater then 0!");
     }
     double result = std::log10(a);
     if (!IsValid(result)) {
