@@ -15,22 +15,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+SRC_DIR=../src/calculator
+
 SOURCES += \
-    gui_main.cpp \
-    mainwindow.cpp \
-    ../math/wmath.cpp \
-    ../gui-linking/gui-linker.cpp
+    $$SRC_DIR/gui/gui_main.cpp \
+    $$SRC_DIR/gui/mainwindow.cpp \
+    $$SRC_DIR/math/wmath.cpp \
+    $$SRC_DIR/gui-linking/gui-linker.cpp
 
 HEADERS += \
-    mainwindow.h \
-    ../math/wmath.h \
-    ../gui-linking/gui-linker.h
+    $$SRC_DIR/gui/mainwindow.h \
+    $$SRC_DIR/math/wmath.h \
+    $$SRC_DIR/gui-linking/gui-linker.h
 
 FORMS += \
-    mainwindow.ui
+    $$SRC_DIR/gui/mainwindow.ui
 
-TARGET = WCalculator
+TARGET = wcalculator
 
 #install
 target.path = $$PREFIX/bin
 INSTALLS += target
+

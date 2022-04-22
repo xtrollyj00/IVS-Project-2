@@ -1,16 +1,34 @@
-CC = g++
-EXECUTABLE = main
-BUILDDIR = build
-CFLAGS = -g -Wall -Werror -std=c17
+TARGET=wcalculator
+ZIPFILE=xalexa09_xgurka00_xmagda03
 
-VPATH = calculator calculator/math calculator/gui calculator/math/exceptions
+.PHONY: clean makefile doc
 
-all: $(EXECUTABLE)
+all: $(TARGET)
 
-run: all
-	./$(EXECUTABLE)
+$(TARGET): makefile
+	cd ../build && make
 
-$(EXECUTABLE): main.o wmath.o
+makefile:
+	cd ../build && qmake
 
-clean:
-	rm *.o  $(EXECUTABLE)
+pack:
+	mkdir -p ../../$(ZIPFILE)
+	mkdir -p ../../$(ZIPFILE)/doc
+	mkdir -p ../../$(ZIPFILE)/install
+	mkdir -p ../../$(ZIPFILE)/repo
+	make doc
+	cp -a ../docs/. ../../$(ZIPFILE)/doc
+	make clean
+	
+	
+doc:
+	doxygen
+
+run: $(TARGET)
+	cd ../build && ./wcalculator
+
+#profile:
+
+clean: makefile
+	cd ../build && make clean && rm -f $(TARGET) Makefile .qmake.stash
+	rm -r ../docs
