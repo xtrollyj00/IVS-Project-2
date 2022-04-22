@@ -24,8 +24,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // setting window not to be resizable
     this->setFixedSize(WIDTH,HEIGHT);
 
+    // help
     ui->pushButton_ans->setToolTip("Prints \"Ans\" on the display - represents last shown (computed) value.");
     ui->pushButton_clear->setToolTip("Clears the display. Sets 0 as the initial value.");
     ui->pushButton_fact->setToolTip("Computes factorial of a number. After pressing \"!\", typing other characters is disabled.");
@@ -176,11 +178,18 @@ void MainWindow::on_pushButton_ans_released()
     // Can't concatenate  with result of "789Ans" for example
     if(startOfOperand && !secondOperand)
     {
-        ui->label->setText("Ans");
+        // to allow expression like "-Ans+X"
+        if(ui->label->text() == "-"){
+            ui->label->setText("-Ans");
+        }
+        else{
+            ui->label->setText("Ans");
+        }
         usedDot_1 = true;
         stillZeroFirst = false;
         writingEnable = false;
         startOfOperand = false;
+        operatorNotAllowed = false;
     }
     else if(startOfOperand && secondOperand)
     {
@@ -229,11 +238,13 @@ void MainWindow::on_pushButton_minus_released()
         clearDisplay();
         ui->label->setText("-");
         stillZeroFirst = false;
+        operatorNotAllowed = true;
     }
     else if(startOfOperand && !secondOperand)
     {
         stillZeroFirst = false;
         ui->label->setText("-");
+        operatorNotAllowed = true;
     }
     else if(startOfOperand)
     {

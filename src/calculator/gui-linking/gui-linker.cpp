@@ -29,12 +29,23 @@ double toNumber(std::string operand){
     double number;
     if (operand == "Ans")
     {
+        if(compute.GetAnswer() == nullptr){
+            return 0.0;
+        }
         return compute.GetAnswer()->GetValue();
     }
     // if number is negative function stod can not convert it
     // we send to stod only positive part and then negate it
     if (operand[0] == '-'){
         operand = operand.substr(1);
+        if(operand == "Ans"){
+            if(compute.GetAnswer() == nullptr){
+                return 0.0;
+            }
+            number = compute.GetAnswer()->GetValue();
+            number = -number;
+            return number;
+        }
         number = std::stod(operand);
         number = - number;
     }
