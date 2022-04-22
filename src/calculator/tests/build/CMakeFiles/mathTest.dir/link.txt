@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/mathTest.dir/mathTest.cpp.o CMakeFiles/mathTest.dir/home/jakub/ivs-calculator/src/calculator/math/wmath.cpp.o  -o mathTest  lib/libgtest_main.a lib/libgtest.a -lpthread 
