@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>361</width>
-    <height>507</height>
+    <width>358</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,14 +18,17 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
+      <y>40</y>
       <width>361</width>
-      <height>111</height>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>KacstDigital</family>
       <pointsize>15</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
@@ -45,6 +48,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -67,6 +78,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
@@ -87,6 +106,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -109,6 +136,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
@@ -129,6 +164,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -151,6 +194,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
@@ -171,6 +222,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -193,6 +252,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
@@ -213,6 +280,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -235,6 +310,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
@@ -256,6 +339,14 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #04705c;
@@ -265,7 +356,7 @@
      <string>=</string>
     </property>
     <property name="shortcut">
-     <string>=</string>
+     <string>Return</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_clear">
@@ -276,6 +367,14 @@
       <width>91</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>14</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -295,6 +394,11 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #87edda;
@@ -312,6 +416,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -334,13 +446,18 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #87edda;
 }</string>
     </property>
     <property name="text">
-     <string>ans</string>
+     <string>Ans</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_times">
@@ -351,6 +468,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -373,6 +498,11 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #87edda;
@@ -393,6 +523,14 @@
       <width>91</width>
       <height>81</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -415,6 +553,11 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #87edda;
@@ -435,6 +578,11 @@
       <width>91</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -457,16 +605,24 @@
       <height>81</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>KacstDigital</family>
+      <pointsize>17</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #0af7ca;
 }</string>
     </property>
     <property name="text">
-     <string>.</string>
+     <string>,</string>
     </property>
     <property name="shortcut">
-     <string>.</string>
+     <string>,</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_delete">
@@ -477,6 +633,11 @@
       <width>91</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
@@ -499,6 +660,11 @@
       <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{
 	background-color: #87edda;
@@ -508,19 +674,54 @@
      <string>log</string>
     </property>
    </widget>
-   <widget class="QToolButton" name="toolButton">
+   <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>260</y>
-      <width>26</width>
-      <height>24</height>
+      <x>0</x>
+      <y>0</y>
+      <width>361</width>
+      <height>41</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	background-color: #87edda;
+}</string>
+    </property>
     <property name="text">
-     <string>...</string>
+     <string> </string>
     </property>
    </widget>
+   <zorder>pushButton_7</zorder>
+   <zorder>pushButton_8</zorder>
+   <zorder>pushButton_9</zorder>
+   <zorder>pushButton_4</zorder>
+   <zorder>pushButton_5</zorder>
+   <zorder>pushButton_6</zorder>
+   <zorder>pushButton_1</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_0</zorder>
+   <zorder>pushButton_equals</zorder>
+   <zorder>pushButton_clear</zorder>
+   <zorder>pushButton_root</zorder>
+   <zorder>pushButton_minus</zorder>
+   <zorder>pushButton_ans</zorder>
+   <zorder>pushButton_times</zorder>
+   <zorder>pushButton_div</zorder>
+   <zorder>pushButton_plus</zorder>
+   <zorder>pushButton_power</zorder>
+   <zorder>pushButton_fact</zorder>
+   <zorder>pushButton_dot</zorder>
+   <zorder>pushButton_delete</zorder>
+   <zorder>pushButton_log</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
   </widget>
  </widget>
  <resources/>

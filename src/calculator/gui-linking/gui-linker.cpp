@@ -20,7 +20,7 @@
 #include <iomanip>
 #include <sstream>
 
-#define PRECISION 20
+#define PRECISION 14
 
 // declaration of object compute
 Math compute;
@@ -81,9 +81,10 @@ std::string result(std::string expression){
         double operand2 = toNumber(tmp2);
 
         // compute result and convert to string
-        result = compute.Add(operand1,operand2);
-        return_value = std::to_string(result);
-        return_value = zeroDelete(return_value);
+        try{result = compute.Add(operand1,operand2);
+            return_value = std::to_string(result);
+            return_value = zeroDelete(return_value);}
+        catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
     }
 
     else if ((dlimiter = expression.find('*')) != -1)
@@ -94,9 +95,10 @@ std::string result(std::string expression){
         double operand1 = toNumber(tmp1);
         double operand2 = toNumber(tmp2);
 
-        result = compute.Multiply(operand1,operand2);
-        return_value = std::to_string(result);
-        return_value = zeroDelete(return_value);
+        try{result = compute.Multiply(operand1,operand2);
+            return_value = std::to_string(result);
+            return_value = zeroDelete(return_value);}
+        catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
     }
 
     else if ((dlimiter = expression.find('/')) != -1)
@@ -111,6 +113,7 @@ std::string result(std::string expression){
         try{result = compute.Divide(operand1,operand2);
             return_value = std::to_string(result);
             return_value = zeroDelete(return_value);}
+        catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
         catch(Exc::DivisionByZeroException& e){return_value = "Math ERROR";}
     }
 
@@ -154,12 +157,13 @@ std::string result(std::string expression){
             return_value = std::to_string(result);
             return_value = zeroDelete(return_value);}
         catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
+        catch(Exc::NumberNotValidException& e){return_value = "Math ERROR";}
     }
 
     // logarithm calculation
     else if ((dlimiter = expression.find('g')) != -1)
     {
-        tmp1 = expression.substr(dlimiter);
+        tmp1 = expression.substr(dlimiter+1);
 
         double operand1 = toNumber(tmp1);
 
@@ -198,19 +202,20 @@ std::string result(std::string expression){
         }
 
         tmp1 = expression.substr(0,dlimiter);
-        tmp2 = expression.substr(dlimiter);
+        tmp2 = expression.substr(dlimiter+1);
 
         double operand1 = toNumber(tmp1);
         double operand2 = toNumber(tmp2);
 
-        result = compute.Subtract(operand1,operand2);
-        return_value = std::to_string(result);
-        return_value = zeroDelete(return_value);
+        try{result = compute.Subtract(operand1,operand2);
+            return_value = std::to_string(result);
+            return_value = zeroDelete(return_value);}
+        catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
     }
 
     // check if number isnt too long to printing on display
     // if it is convert it to scientific form
-    if (return_value.length() >= 31){
+    if (return_value.length() >= PRECISION){
         std::stringstream buffer;
         buffer << std::setprecision(PRECISION) << std::scientific << result;
         return_value = buffer.str();
