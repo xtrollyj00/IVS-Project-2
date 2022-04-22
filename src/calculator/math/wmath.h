@@ -70,12 +70,17 @@ class Math {
      *
      * @param a augent
      * @param b addend
+     * 
+     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity).
+     * 
      * @return double sum of @b a and @b b
      */
     double Add(double a, double b);
 
     /**
      * @brief Returns result of operation ( @b a - @b b ).
+     * 
+     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity).
      *
      * @param a minuend
      * @param b subtrahend
@@ -85,6 +90,8 @@ class Math {
 
     /**
      * @brief Returns result of operation ( @b a * @b b ).
+     * 
+     * @exception Exc::NumberNotValidException() - Thrown when result is not valid number (NaN or infinity).
      *
      * @param a multiplier
      * @param b multiplicand
