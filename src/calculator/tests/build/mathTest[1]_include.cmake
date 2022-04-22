@@ -1,0 +1,5 @@
+if(EXISTS "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest[1]_tests.cmake")
+  include("/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest[1]_tests.cmake")
+else()
+  add_test(mathTest_NOT_BUILT mathTest_NOT_BUILT)
+endif()

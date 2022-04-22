@@ -1,0 +1,180 @@
+Start testing: Apr 22 21:14 CEST
+----------------------------------------------------------
+1/9 Testing: MathTest.Add
+1/9 Test: MathTest.Add
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Add" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Add" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Add
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Add
+[       OK ] MathTest.Add (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (3 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Add" end time: Apr 22 21:14 CEST
+"MathTest.Add" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/9 Testing: MathTest.Subtract
+2/9 Test: MathTest.Subtract
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Subtract" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Subtract" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Subtract
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Subtract
+[       OK ] MathTest.Subtract (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Subtract" end time: Apr 22 21:14 CEST
+"MathTest.Subtract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/9 Testing: MathTest.Multiply
+3/9 Test: MathTest.Multiply
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Multiply" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Multiply" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Multiply
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Multiply
+[       OK ] MathTest.Multiply (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (2 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Multiply" end time: Apr 22 21:14 CEST
+"MathTest.Multiply" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/9 Testing: MathTest.Divide
+4/9 Test: MathTest.Divide
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Divide" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Divide" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Divide
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Divide
+[       OK ] MathTest.Divide (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Divide" end time: Apr 22 21:14 CEST
+"MathTest.Divide" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/9 Testing: MathTest.Power
+5/9 Test: MathTest.Power
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Power" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Power" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Power
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Power
+[       OK ] MathTest.Power (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MathTest.Power" end time: Apr 22 21:14 CEST
+"MathTest.Power" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/9 Testing: MathTest.Root
+6/9 Test: MathTest.Root
+Command: "/home/jakub/ivs-calculator/src/calculator/tests/build/mathTest" "--gtest_filter=MathTest.Root" "--gtest_also_run_disabled_tests"
+Directory: /home/jakub/ivs-calculator/src/calculator/tests/build
+"MathTest.Root" start time: Apr 22 21:14 CEST
+Output:
+----------------------------------------------------------
+Running main() from /home/jakub/ivs-calculator/src/calculator/tests/build/_deps/googletest-src/googletest/src/gtest_main.cc
+Note: Google Test filter = MathTest.Root
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from MathTest
+[ RUN      ] MathTest.Root
+/home/jakub/ivs-calculator/src/calculator/tests/mathTest.cpp:95: Failure
+Expected: operation.Root(0,0) throws an exception of type Exc::InvalidArgumentException.
+  Actual: it throws a different type.
+/home/jakub/ivs-calculator/src/calculator/tests/mathTest.cpp:96: Failure
+Expected: operation.Root(2,0) throws an exception of type Exc::InvalidArgumentException.
+  Actual: it throws a different type.
+/home/jakub/ivs-calculator/src/calculator/tests/mathTest.cpp:97: Failure
+Expected: operation.Root(-5,2) throws an exception of type Exc::InvalidArgumentException.
+  Actual: it throws a different type.
+/home/jakub/ivs-calculator/src/calculator/tests/mathTest.cpp:98: Failure
+Expected: operation.Root(-5,6) throws an exception of type Exc::InvalidArgumentException.
+  Actual: it throws a different type.
+[  FAILED  ] MathTest.Root (0 ms)
+[----------] 1 test from MathTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] MathTest.Root
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"MathTest.Root" end time: Apr 22 21:14 CEST
+"MathTest.Root" time elapsed: 00:00:00
+----------------------------------------------------------
+
