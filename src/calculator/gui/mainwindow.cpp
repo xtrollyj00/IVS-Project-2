@@ -267,6 +267,7 @@ void MainWindow::on_pushButton_fact_released()
         ui->label->setText(ui->label->text() + "!");
         variablesSet();
         writingEnable = false;
+        startOfOperand = false;
     }
 }
 
