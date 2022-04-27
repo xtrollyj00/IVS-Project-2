@@ -29,7 +29,7 @@ pack:
 	
 	cd ../../ && mv $(REPO_NAME) $(TARGET)-$(VERSION)
 	cd ../../ && tar -cf $(TARGET)-$(VERSION).tar.gz $(TARGET)-$(VERSION)
-	cd ../ && dpkg-buildpackage -rfakeroot
+	cd ../ && dpkg-buildpackage -uc -us -rfakeroot
 	cp ../../$(TARGET)_$(VERSION)_amd64.deb ../../$(ZIPFILE)/install/$(TARGET)_$(VERSION)_amd64.deb
 	cd ../../ && mv $(TARGET)-$(VERSION) $(REPO_NAME)
 
