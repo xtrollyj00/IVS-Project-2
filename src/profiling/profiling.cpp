@@ -1,3 +1,18 @@
+/*
+© Copyright 2022
+    Alexaj Ondrej <xalexa09@stud.fit.vutbr.cz>
+    Gurka Oliver <xgurka00@stud.fit.vutbr.cz>
+    Magda Jakub <xmagda03@stud.fit.vutbr.cz>
+*/
+
+/**
+ * @file profiling.cpp
+ * @author Ondrej Alexaj xalexa09@stud.fit.vutbr.cz
+ * @brief Profiling for math library used in WCalculator
+ * @version 1.0
+ * @date 2022-04-27
+ */
+
 #include "../calculator/math/wmath.h"
 #include <stdio.h>
 

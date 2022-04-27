@@ -1,4 +1,3 @@
-xalexa09 
-xgurka00 
-xmagda03 
-
+xalexa09 100 (GUI, profiling, mockup)
+xgurka00 100 (Math library, installer, makefile, doxyfile)
+xmagda03 100 (Tests, GUI Linker, user documentation)
