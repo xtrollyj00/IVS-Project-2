@@ -107,6 +107,16 @@ void MainWindow::digit_released()
 
         if(!secondOperand)
         {
+            if(ui->label->text()=="-" && signalSender->text() == "0")
+            {
+                ui->label->setText(ui->label->text()+"0");
+                stillZeroFirst = true;
+                startOfOperand = false;
+                operatorNotAllowed = false;
+                return;
+            }
+            if(ui->label->text()=="-0" && signalSender->text() != ",")
+                return;
             // not allowing to type string like "0000..."
             if(stillZeroFirst && signalSender->text() == "0")
                 return;
@@ -162,6 +172,7 @@ void MainWindow::on_pushButton_equals_released()
     {
         std::string expr = (ui->label->text()).toStdString();
         QString res = QString::fromStdString(result(expr));
+        if(res == "-0") res = "0";
         ui->label_2->setText(ui->label->text()+"=");
         ui->label->setText(res);
         writingEnable = false;
@@ -233,6 +244,8 @@ void MainWindow::on_pushButton_div_released()
 
 void MainWindow::on_pushButton_minus_released()
 {
+    QString operations = "+-*/!^√";
+
     if(wasResult)
     {
         clearDisplay();
@@ -246,10 +259,11 @@ void MainWindow::on_pushButton_minus_released()
         ui->label->setText("-");
         operatorNotAllowed = true;
     }
-    else if(startOfOperand)
+    // we are in the second operand
+    else if(secondOperand && startOfOperand && !operations.contains(ui->label->text()[(ui->label->text()).size()-2], Qt::CaseSensitive))
     {
         stillZeroFirst = false;
-        startOfOperand = false;
+        startOfOperand = true;
         ui->label->setText(ui->label->text() + "-");
     }
     else if(!wasOperation && !operatorNotAllowed && (ui->label->text()).size()<MAX_WIDTH)
@@ -331,9 +345,13 @@ void MainWindow::on_pushButton_delete_released()
             }
         }
 
+        if(removed == "-" && toBeRemovedNext == "-")
+        {
+            wasOperation = true;
+        }
         // If removed char was operation, variables are set to
         // state corresponding with no operation
-        if(operations.contains(removed, Qt::CaseSensitive))
+        else if(operations.contains(removed, Qt::CaseSensitive))
         {
             wasOperation = false;
             writingEnable = true;
@@ -357,7 +375,13 @@ void MainWindow::on_pushButton_delete_released()
             if(secondOperand)
                 usedDot_2 = false;
             else
+            {
                 usedDot_1 = false;
+                if(toBeRemovedNext == "0")
+                {
+                    stillZeroFirst = true;
+                }
+            }
         }
         // If "s" was removed, it means it is part of "Ans",
         // therefore the wole word "Ans" is removed
@@ -380,7 +404,16 @@ void MainWindow::on_pushButton_delete_released()
 
         // When char, that could poosibly be remvoed next time, is
         // operation, variables are set to corresponding state
-        if(operations.contains(toBeRemovedNext, Qt::CaseSensitive))
+        if(toBeRemovedNext == "-" && displayed.length()==1)
+        {
+            wasOperation = false;
+            writingEnable = true;
+            startOfOperand = true;
+            secondOperand = false;
+            digitPressed = false;
+            stillZeroFirst = false;
+        }
+        else if(operations.contains(toBeRemovedNext, Qt::CaseSensitive))
         {
             startOfOperand = true;
             secondOperand = true;
