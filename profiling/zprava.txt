@@ -1,1 +1,12 @@
-// TODO
+In 'vystup.pdf' are results of profiling (callgrind). Input files were of different sizes (10, 100 , 1000).
+
+We can see, that our functions Power() and Add() are called most often (and spend the most time of our functions).  
+
+To be more precise, in these functions function IsValid() is called the most (actually, it is called by all our functions that perform computations).
+Therefore it is reasonable to focus on optimizing this function.
+
+Function SetAnswer() is called by all our functions performing computation, so if there is some optimization possible here, it would be also helpful.
+Similarly with the function IsNatural() (but not called by all our computing functions) but called each time Power() is called.
+
+Conclusion: we should concentrate on optimizing IsValid() function in the first place, which is called by all our computing functions. 
+
