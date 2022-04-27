@@ -1,17 +1,22 @@
 TARGET=wcalculator
 ZIPFILE=xalexa09_xgurka00_xmagda03
+PROFILE_TARGET=wcalculator_prof
+VERSION=1.0
+REPO_NAME=ivs-calculator
 
 .PHONY: clean makefile doc
 
-all: $(TARGET)
+all: $(TARGET) profile
 
 $(TARGET): makefile
-	cd ../build && make
+	cd ../build && make -j8
 
 makefile:
 	cd ../build && qmake
 
 pack:
+	make clean
+
 	mkdir -p ../../$(ZIPFILE)
 	mkdir -p ../../$(ZIPFILE)/doc
 	mkdir -p ../../$(ZIPFILE)/install
@@ -20,15 +25,35 @@ pack:
 	cp -a ../docs/. ../../$(ZIPFILE)/doc
 	make clean
 	
-	
+	cd ../../ && mv $(REPO_NAME) $(TARGET)-$(VERSION)
+	cd ../../ && tar -cf $(TARGET)-$(VERSION).tar.gz $(TARGET)-$(VERSION)
+	cd ../ && dpkg-buildpackage -rfakeroot
+	cp ../../$(TARGET)_$(VERSION)_amd64.deb ../../$(ZIPFILE)/install/$(TARGET)_$(VERSION)_amd64.deb
+	cd ../../ && mv $(TARGET)-$(VERSION) $(REPO_NAME)
+
+	make clean
+	cp -a ../../$(REPO_NAME)/. ../../$(ZIPFILE)/repo
+	cd ../../ && zip -r $(ZIPFILE).zip $(ZIPFILE)
+
+	make clean
+
 doc:
 	doxygen
 
 run: $(TARGET)
 	cd ../build && ./wcalculator
 
-#profile:
+test:
+	cd ./calculator/tests && cmake -S . -B build && cmake --build build -j8 && cd ./build && ctest
+
+profile: 
+	mkdir -p ./profiling/build
+	cd ./profiling && g++ --std=c++11 -g -pg *.cpp ../calculator/math/*.cpp -o build/$(PROFILE_TARGET)
 
 clean: makefile
 	cd ../build && make clean && rm -f $(TARGET) Makefile .qmake.stash
-	rm -r ../docs
+	cd ./calculator/tests && rm -rf build
+	rm -rf ./profiling/build
+	rm -rf ../docs
+	rm -f ../Makefile
+	rm -f ../.qmake.stash
