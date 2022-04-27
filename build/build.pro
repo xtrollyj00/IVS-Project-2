@@ -4,6 +4,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
+QMAKE_EXTRA_TARGETS += shortcut rm_shortcut
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Please consult the documentation of the
@@ -33,7 +35,11 @@ FORMS += \
 
 TARGET = wcalculator
 
+shortcut.commands = mkdir -p /usr/share/applications ; mkdir -p /usr/share/pixmaps ; cp ../install/wcalculator.desktop /usr/share/applications ; cp ../install/wcalculator.xpm /usr/share/pixmaps
+rm_shortcut.commands = rm -f /usr/share/applications/wcalculator.desktop ; rm -f /usr/share/pixmaps/wcalculator.xpm
+
 #install
-target.path = $$PREFIX/bin
+target.path = $$(PREFIX)/bin
+target.depends
 INSTALLS += target
 

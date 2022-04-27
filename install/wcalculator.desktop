@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Qt;Science;Office;Utility
+Exec=wcalculator
+GenericName=Calculator
+Icon=/usr/share/pixmaps/wcalculator.xpm
+Name=WCalculator
+Type=Application
+X-KDE-StartupNotify=false
+

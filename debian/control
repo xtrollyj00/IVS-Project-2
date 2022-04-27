@@ -1,0 +1,11 @@
+Source: wcalculator
+Section: Utilities
+Priority: extra
+Maintainer: Oliver Gurka <xgurka00@stud.fit.vutbr.cz>
+Build-Depends: debhelper-compat (= 12), qt5-qmake, qtdeclarative5-dev
+Standards-Version: 4.4.1
+
+Package: wcalculator
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Simple but very nice calculator :)
