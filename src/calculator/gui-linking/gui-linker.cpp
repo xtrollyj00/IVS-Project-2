@@ -66,6 +66,10 @@ std::string zeroDelete(std::string arr){
             arr = arr.substr(0,i);
             break;
         }
+        else if (arr[i] == '.'){
+            arr = arr.substr(0,i);
+            break;
+        }
         else{
             break;
         }
