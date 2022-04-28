@@ -98,6 +98,7 @@ std::string result(std::string expression){
             return_value = std::to_string(result);
             return_value = zeroDelete(return_value);}
         catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
+        catch(Exc::NumberNotValidException& e){return_value = "Math ERROR";}
     }
 
     else if ((dlimiter = expression.find('*')) != -1)
@@ -112,6 +113,7 @@ std::string result(std::string expression){
             return_value = std::to_string(result);
             return_value = zeroDelete(return_value);}
         catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
+        catch(Exc::NumberNotValidException& e){return_value = "Math ERROR";}
     }
 
     else if ((dlimiter = expression.find('/')) != -1)
@@ -128,6 +130,7 @@ std::string result(std::string expression){
             return_value = zeroDelete(return_value);}
         catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
         catch(Exc::DivisionByZeroException& e){return_value = "Math ERROR";}
+        catch(Exc::NumberNotValidException& e){return_value = "Math ERROR";}
     }
 
     else if ((dlimiter = expression.find('^')) != -1)
@@ -224,6 +227,7 @@ std::string result(std::string expression){
             return_value = std::to_string(result);
             return_value = zeroDelete(return_value);}
         catch(Exc::InvalidArgumentException& e){return_value = "Math ERROR";}
+        catch(Exc::NumberNotValidException& e){return_value = "Math ERROR";}
     }
 
     // check if number isnt too long to printing on display
