@@ -197,7 +197,7 @@ std::string result(std::string expression){
 
         // count number of '-' in string
         int counter = 0;
-        for (int i = 0; i < expression.length(); i++){
+        for (long unsigned int i = 0; i < expression.length(); i++){
             if (expression[i] == '-'){
                 counter++;
             }
