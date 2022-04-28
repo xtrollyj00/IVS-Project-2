@@ -133,13 +133,16 @@ void MainWindow::digit_released()
                 stillZeroFirst = true;
             }
            // not allowing to type string like "0000..." after operand
-            else if(stillZeroFirst && signalSender->text() == "0")
+            else if(stillZeroFirst && signalSender->text() == "0"){
                 return;
-            else if(stillZeroFirst && !usedDot_2)
+            }
+            else if(stillZeroFirst && !usedDot_2){
                 return;
-            else if(signalSender->text() != "0")
+            }
+            else if(signalSender->text() != "0"){
                 stillZeroFirst = false;
-        }
+            }
+       }
 
         operatorNotAllowed = false;
         startOfOperand = false;
@@ -245,6 +248,7 @@ void MainWindow::on_pushButton_div_released()
 void MainWindow::on_pushButton_minus_released()
 {
     QString operations = "+-*/!^√";
+    QChar prevPrevChar = ui->label->text()[(ui->label->text()).size()-2];
 
     if(wasResult)
     {
@@ -260,7 +264,7 @@ void MainWindow::on_pushButton_minus_released()
         operatorNotAllowed = true;
     }
     // we are in the second operand
-    else if(secondOperand && startOfOperand && !operations.contains(ui->label->text()[(ui->label->text()).size()-2], Qt::CaseSensitive))
+    else if(secondOperand && startOfOperand && !operations.contains(prevPrevChar, Qt::CaseSensitive) && prevPrevChar != "g")
     {
         stillZeroFirst = false;
         startOfOperand = true;
@@ -310,6 +314,7 @@ void MainWindow::on_pushButton_log_released()
     if(!wasOperation && !operatorNotAllowed && nothingPressed)
     {
         ui->label->setText("log");
+        startOfOperand = true;
         variablesSet();
     }
 }
@@ -345,7 +350,14 @@ void MainWindow::on_pushButton_delete_released()
             }
         }
 
-        if(removed == "-" && toBeRemovedNext == "-")
+        if(toBeRemovedNext == "g")
+        {
+            ui->label->setText(displayed);
+            variablesSet();
+            startOfOperand = true;
+            return;
+        }
+        else if(removed == "-" && toBeRemovedNext == "-")
         {
             wasOperation = true;
         }
@@ -401,7 +413,6 @@ void MainWindow::on_pushButton_delete_released()
                 startOfOperand = true;
             }
         }
-
         // When char, that could poosibly be remvoed next time, is
         // operation, variables are set to corresponding state
         if(toBeRemovedNext == "-" && displayed.length()==1)
@@ -437,7 +448,7 @@ void MainWindow::on_pushButton_delete_released()
         if(wasOperation)
         {
             QChar toBeRemovedNextNext = displayed[displayed.length()-2];
-            if(operations.contains(toBeRemovedNextNext, Qt::CaseSensitive))
+            if(operations.contains(toBeRemovedNextNext, Qt::CaseSensitive) || toBeRemovedNextNext == "g")
             {
                 if(toBeRemovedNext == "0")
                 {
