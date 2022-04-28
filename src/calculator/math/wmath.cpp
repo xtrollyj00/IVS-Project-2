@@ -19,6 +19,8 @@
 #include <exception>
 #include <cmath>
 
+#define FACT_CHECK_FREQ 5
+
 Answer::Answer(double value) {
     this->value = value;
 }
@@ -99,7 +101,16 @@ double Math::Factorial(double a) {
         return 1.0;
     }
 
-    for (double i = a - 1; i > 0; i--) {
+    size_t cycle_counter = 0;
+    for (double i = a - 1; i > 0; i--, cycle_counter++) {
+
+        // Check every FACT_CHECK_FREQ cycle if 
+        if (cycle_counter % FACT_CHECK_FREQ == 0) {
+            if (!IsValid(result)) {
+                throw Exc::NumberNotValidException("Result of operation is NaN or infinity!");
+            }
+        }
+
         result *= i;
     }
 
