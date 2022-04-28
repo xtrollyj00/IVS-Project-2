@@ -152,14 +152,14 @@ void MainWindow::on_pushButton_dot_released()
 {
     if(!usedDot_1 && !secondOperand && writingEnable && digitPressed && (ui->label->text()).size()<MAX_WIDTH)
     {
-        ui->label->setText(ui->label->text() + ",");
+        ui->label->setText(ui->label->text() + ".");
         usedDot_1 = true;
         stillZeroFirst = false;
         operatorNotAllowed = true;
     }
     else if(!usedDot_2 && secondOperand && writingEnable && digitPressed && (ui->label->text()).size()<MAX_WIDTH)
     {
-        ui->label->setText(ui->label->text() + ",");
+        ui->label->setText(ui->label->text() + ".");
         usedDot_2 = true;
         stillZeroFirst = false;
         operatorNotAllowed = true;
@@ -369,7 +369,7 @@ void MainWindow::on_pushButton_delete_released()
             clearDisplay();
             return;
         }
-        else if(removed == ",")
+        else if(removed == ".")
         {
             operatorNotAllowed = false;
             if(secondOperand)
@@ -424,7 +424,7 @@ void MainWindow::on_pushButton_delete_released()
         // When char, that could poosibly be remvoed next time, is
         // dot, means something like xx. is on display, therefore
         // operator is not allowed
-        if(toBeRemovedNext == ",")
+        if(toBeRemovedNext == ".")
         {
             operatorNotAllowed = true;
         }
