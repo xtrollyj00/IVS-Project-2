@@ -628,10 +628,10 @@
 }</string>
     </property>
     <property name="text">
-     <string>,</string>
+     <string>.</string>
     </property>
     <property name="shortcut">
-     <string>,</string>
+     <string>.</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_delete">
