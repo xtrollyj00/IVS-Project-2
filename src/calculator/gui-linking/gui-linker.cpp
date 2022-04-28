@@ -26,6 +26,7 @@
 Math compute;
 
 double toNumber(std::string operand){
+    std::setlocale(LC_ALL,"en_US.UTF-8");
     double number;
     if (operand == "Ans")
     {
@@ -62,10 +63,6 @@ std::string zeroDelete(std::string arr){
         if (arr[i] == '0'){
             arr = arr.substr(0,i);
         }
-        else if (arr[i] == ','){
-            arr = arr.substr(0,i);
-            break;
-        }
         else if (arr[i] == '.'){
             arr = arr.substr(0,i);
             break;
@@ -78,6 +75,7 @@ std::string zeroDelete(std::string arr){
 }
 
 std::string result(std::string expression){
+    std::setlocale(LC_ALL,"en_US.UTF-8");
     int dlimiter;
     std::string tmp1;
     std::string tmp2;

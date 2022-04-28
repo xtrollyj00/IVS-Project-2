@@ -115,7 +115,7 @@ void MainWindow::digit_released()
                 operatorNotAllowed = false;
                 return;
             }
-            if(ui->label->text()=="-0" && signalSender->text() != ",")
+            if(ui->label->text()=="-0" && signalSender->text() != ".")
                 return;
             // not allowing to type string like "0000..."
             if(stillZeroFirst && signalSender->text() == "0")
